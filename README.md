@@ -152,4 +152,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ## 🙋‍♂️ Author
 
 👤 **Niraj Kumar**  
-Feel free to connect via [GitHub](https://github.com/niraj-kumar-r) or [LinkedIn](https://www.linkedin.com/in/niraj-kumar-r).
+Feel free to connect via [GitHub](https://github.com/niraj-kumar-r) or [LinkedIn](https://www.linkedin.com/in/niraj-kumar-r/).
