@@ -121,18 +121,14 @@ public class SteganographyService {
 
                 if (bitIndex >= 32) {
                     break outerLoop1;
-                }
-
-                if (bitIndex < 32) {
+                } else {
                     binaryLengthBuilder.append(green & 1);
                     bitIndex++;
                 }
 
                 if (bitIndex >= 32) {
                     break outerLoop1;
-                }
-
-                if (bitIndex < 32) {
+                } else{
                     binaryLengthBuilder.append(blue & 1);
                     bitIndex++;
                 }
@@ -157,7 +153,7 @@ public class SteganographyService {
         // Extract the message bits
         StringBuilder binaryMessageBuilder = new StringBuilder();
         int bitsNeeded = messageLength * 8;
-        bitIndex = 0;
+//        bitIndex = 0;
 
         // Start from where we left off (after the 32-bit length)
         int currentY = 0;
@@ -214,7 +210,7 @@ public class SteganographyService {
         for (int i = 0; i < messageLength; i++) {
             for (int j = 0; j < 8; j++) {
                 if (binaryMessageBuilder.charAt(i * 8 + j) == '1') {
-                    messageBytes[i] |= (1 << (7 - j));
+                    messageBytes[i] |= (byte) (1 << (7 - j));
                 }
             }
         }

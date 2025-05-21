@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Encode Message in Image</title>
 </head>
@@ -10,7 +10,10 @@
     <input type="file" name="image" accept="image/png" required /><br/><br/>
 
     <label>Message to hide:</label><br/>
-    <textarea name="message" rows="4" cols="50" required></textarea><br/><br/>
+    <label>
+        <textarea name="message" rows="4" cols="50" required></textarea>
+    </label>
+    <br/><br/>
 
     <button type="submit">Encode & Download</button>
 </form>
