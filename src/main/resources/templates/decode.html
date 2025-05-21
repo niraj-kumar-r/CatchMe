@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Decode Message from Image</title>
+</head>
+<body>
+<h1>Decode Message from Image</h1>
+<form method="post" action="/decode" enctype="multipart/form-data">
+    <label>Select PNG image:</label><br/>
+    <input type="file" name="image" accept="image/png" required /><br/><br/>
+    <button type="submit">Decode</button>
+</form>
+
+<div th:if="${decodedMessage}">
+    <h3>Decoded Message:</h3>
+    <p th:text="${decodedMessage}"></p>
+</div>
+
+<br/><a href="/">Go to Encode Page</a>
+</body>
+</html>
