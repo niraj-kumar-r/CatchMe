@@ -33,11 +33,19 @@ public class SteganographyWebController {
             @RequestParam("message") String message
     ) throws Exception {
         byte[] encodedImage = stegoService.encodeMessageInImage(image.getBytes(), message);
-        logger.info("Message encoded successfully! YAYYYYY!!!");
+        logger.info("Message encoded successfully!");
+
+        // Get original filename without extension
+        String originalFilename = image.getOriginalFilename();
+        String baseName = (originalFilename != null) ? originalFilename.replaceFirst("[.][^.]+$", "") : "encoded";
+
+        // Create dynamic filename with timestamp
+        String dynamicFilename = baseName + "_encoded_" + System.currentTimeMillis() + ".png";
+
         ByteArrayResource resource = new ByteArrayResource(encodedImage);
 
         return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=encoded.png")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + dynamicFilename)
                 .contentType(MediaType.IMAGE_PNG)
                 .body(resource);
     }
